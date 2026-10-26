@@ -6,7 +6,7 @@ A web application for municipal waste management that uses GIS technology includ
 
 ## Live Demo
 
-- **Live Website:** [Open Web App](https://gis-based-smart-municipalwaste.onrender.com/)
+- **Live Website:** [https://gis-based-smart-municipalwaste.onrender.com/](https://gis-based-smart-municipalwaste.onrender.com/)
 - **GitHub Repository:** [Source Code](https://github.com/<your-username>/<your-repo-name>)
 
 > The live demo link will work after the Flask application has been successfully deployed. Until then, run the project locally using the instructions below.
