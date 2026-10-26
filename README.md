@@ -450,7 +450,7 @@ These are proposed enhancements and should not be considered implemented feature
 
 **Submitted by:**
 - Jerome Louie P
-- - Bharanidaran S
+- Bharanidaran S
 
 **Project Type:** Academic software prototype
 
