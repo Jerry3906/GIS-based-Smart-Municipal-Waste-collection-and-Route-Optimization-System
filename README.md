@@ -449,8 +449,8 @@ These are proposed enhancements and should not be considered implemented feature
 **Institution:** Vellore Institute of Technology (VIT), Chennai
 
 **Submitted by:**
-- Bharanidaran S
 - Jerome Louie P
+- - Bharanidaran S
 
 **Project Type:** Academic software prototype
 
