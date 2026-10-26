@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Collection History{% endblock %}
+{% block page_title %}Collection History{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3><i class="fas fa-history" style="color:var(--accent-blue);margin-right:8px;"></i>Historical Collection Records</h3>
+        <span class="card-badge" style="background:rgba(9,132,227,0.12);color:var(--accent-blue);">Records</span>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-secondary);margin-bottom:16px;">
+        Past collection activities with source, waste category, quantity, assigned vehicle, and destination facility.
+    </p>
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Source ID</th>
+                    <th>Source Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Truck</th>
+                    <th>Facility</th>
+                </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>document.addEventListener('DOMContentLoaded', initCollectionHistory);</script>
+{% endblock %}

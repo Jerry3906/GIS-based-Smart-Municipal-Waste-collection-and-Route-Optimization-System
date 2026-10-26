@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Analytics{% endblock %}
+{% block page_title %}Analytics & Forecasting{% endblock %}
+
+{% block content %}
+<!-- Summary KPIs -->
+<div class="kpi-grid">
+    <div class="kpi-card green">
+        <div class="kpi-icon green"><i class="fas fa-weight-hanging"></i></div>
+        <div class="kpi-info">
+            <div class="kpi-label">Total Daily Waste</div>
+            <div class="kpi-value" id="grandTotal">—</div>
+        </div>
+    </div>
+    <div class="kpi-card" style="border-left:4px solid var(--waste-recyclable);">
+        <div class="kpi-icon green"><i class="fas fa-recycle"></i></div>
+        <div class="kpi-info">
+            <div class="kpi-label">Recyclable</div>
+            <div class="kpi-value" id="total_recyclable" style="color:var(--waste-recyclable);">—</div>
+        </div>
+    </div>
+    <div class="kpi-card" style="border-left:4px solid var(--waste-organic);">
+        <div class="kpi-icon yellow"><i class="fas fa-leaf"></i></div>
+        <div class="kpi-info">
+            <div class="kpi-label">Organic</div>
+            <div class="kpi-value" id="total_organic" style="color:var(--waste-organic);">—</div>
+        </div>
+    </div>
+    <div class="kpi-card" style="border-left:4px solid var(--waste-general);">
+        <div class="kpi-icon blue"><i class="fas fa-trash"></i></div>
+        <div class="kpi-info">
+            <div class="kpi-label">General</div>
+            <div class="kpi-value" id="total_general" style="color:var(--waste-general);">—</div>
+        </div>
+    </div>
+    <div class="kpi-card" style="border-left:4px solid var(--waste-chemical);">
+        <div class="kpi-icon orange"><i class="fas fa-flask"></i></div>
+        <div class="kpi-info">
+            <div class="kpi-label">Chemical</div>
+            <div class="kpi-value" id="total_chemical" style="color:var(--waste-chemical);">—</div>
+        </div>
+    </div>
+    <div class="kpi-card" style="border-left:4px solid var(--waste-hazardous);">
+        <div class="kpi-icon red"><i class="fas fa-biohazard"></i></div>
+        <div class="kpi-info">
+            <div class="kpi-label">Hazardous</div>
+            <div class="kpi-value" id="total_hazardous" style="color:var(--waste-hazardous);">—</div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row 1 -->
+<div class="chart-grid mb-20">
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-chart-pie" style="color:var(--accent-purple);margin-right:8px;"></i>Waste Composition</h3>
+        </div>
+        <div class="chart-container" style="height:300px;"><canvas id="analyticsDonut"></canvas></div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-chart-bar" style="color:var(--accent-blue);margin-right:8px;"></i>Waste by Zone</h3>
+        </div>
+        <div class="chart-container" style="height:300px;"><canvas id="zoneBarChart"></canvas></div>
+    </div>
+</div>
+
+<!-- Charts Row 2 -->
+<div class="chart-grid mb-20">
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-chart-line" style="color:var(--accent-green);margin-right:8px;"></i>Daily Collection Trend</h3>
+        </div>
+        <div class="chart-container" style="height:300px;"><canvas id="trendChart"></canvas></div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-building" style="color:var(--accent-orange);margin-right:8px;"></i>Waste by Source Type</h3>
+        </div>
+        <div class="chart-container" style="height:300px;"><canvas id="typeBarChart"></canvas></div>
+    </div>
+</div>
+
+<!-- Forecasting -->
+<div class="card mb-20">
+    <div class="card-header">
+        <h3><i class="fas fa-crystal-ball" style="color:var(--accent-teal);margin-right:8px;"></i>Waste Generation Forecast</h3>
+        <span class="card-badge" style="background:rgba(9,132,227,0.12);color:var(--accent-blue);">Predictive</span>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">
+        Based on historical collection data, the system estimates upcoming waste generation to support proactive collection planning.
+        <br><strong>Historical Waste Data → Statistical Analysis → Estimated Future Waste → Proactive Collection Planning</strong>
+    </p>
+    <div class="forecast-grid" id="forecastGrid"></div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>document.addEventListener('DOMContentLoaded', initAnalytics);</script>
+{% endblock %}

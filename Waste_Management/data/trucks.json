@@ -1,0 +1,62 @@
+[
+  {
+    "id": "T01",
+    "name": "General Collection Truck",
+    "type": "Standard",
+    "capacity_kg": 5000,
+    "fuel_type": "Diesel",
+    "fuel_efficiency_kmpl": 5.0,
+    "allowed_waste": ["recyclable", "organic", "general"],
+    "current_load_kg": 0,
+    "status": "Available",
+    "description": "Standard waste collection truck suitable for recyclable, organic, and general waste"
+  },
+  {
+    "id": "T02",
+    "name": "Multi-Compartment Truck",
+    "type": "Multi-Compartment",
+    "capacity_kg": 4000,
+    "fuel_type": "Diesel",
+    "fuel_efficiency_kmpl": 4.5,
+    "allowed_waste": ["recyclable", "organic", "general"],
+    "current_load_kg": 0,
+    "status": "Available",
+    "description": "Truck with separate compartments for simultaneous collection of recyclable, organic, and general waste"
+  },
+  {
+    "id": "T03",
+    "name": "Organic Waste Compactor",
+    "type": "Compactor",
+    "capacity_kg": 3500,
+    "fuel_type": "CNG",
+    "fuel_efficiency_kmpl": 5.5,
+    "allowed_waste": ["organic", "general"],
+    "current_load_kg": 0,
+    "status": "Available",
+    "description": "Compactor truck optimized for organic and biodegradable waste with sealed compartment"
+  },
+  {
+    "id": "T04",
+    "name": "HazChem Special Vehicle",
+    "type": "Specialized",
+    "capacity_kg": 2000,
+    "fuel_type": "Diesel",
+    "fuel_efficiency_kmpl": 4.0,
+    "allowed_waste": ["chemical", "hazardous"],
+    "current_load_kg": 0,
+    "status": "Available",
+    "description": "Specialized sealed vehicle for safe transport of chemical and hazardous waste with spill containment"
+  },
+  {
+    "id": "T05",
+    "name": "Heavy-Duty Hauler",
+    "type": "Heavy-Duty",
+    "capacity_kg": 6000,
+    "fuel_type": "Diesel",
+    "fuel_efficiency_kmpl": 4.0,
+    "allowed_waste": ["recyclable", "general"],
+    "current_load_kg": 0,
+    "status": "Available",
+    "description": "Large capacity truck for bulk recyclable and general waste collection from commercial/industrial areas"
+  }
+]

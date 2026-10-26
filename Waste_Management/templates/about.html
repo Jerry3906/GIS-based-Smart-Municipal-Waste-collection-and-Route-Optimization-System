@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block page_title %}About This System{% endblock %}
+
+{% block content %}
+<div class="card about-card mb-20">
+    <h2><i class="fas fa-recycle" style="color:var(--accent-green);margin-right:10px;"></i>Smart Municipal Waste Collection & Route Optimization System</h2>
+    <p>
+        This is a <strong>software prototype</strong> developed as an academic demonstration of how Geographic Information Systems (GIS),
+        waste-data analysis, vehicle management, and route optimization can help a municipality collect waste more efficiently —
+        reducing unnecessary travel, fuel consumption, collection time, and operating cost.
+    </p>
+    <p>
+        All waste data, truck specifications, facility information, and collection records displayed in this application are
+        <strong>simulated for academic demonstration</strong>. No real-time IoT sensors, GPS devices, or cloud services are used.
+        The system runs entirely on <strong>localhost</strong> as a lightweight Flask web application.
+    </p>
+</div>
+
+<div class="grid-2 mb-20">
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-star" style="color:var(--accent-yellow);margin-right:8px;"></i>Key Features</h3>
+        </div>
+        <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i><div><strong>Source-Segregated Waste Tracking</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Every location reports waste by category: recyclable, organic, general, chemical, hazardous</span></div></li>
+            <li><i class="fas fa-check-circle"></i><div><strong>Interactive GIS Map</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Leaflet + OpenStreetMap with markers, popups, heatmap, and collection zones</span></div></li>
+            <li><i class="fas fa-check-circle"></i><div><strong>Fleet Management</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">5 vehicles with capacity, fuel efficiency, and waste-type compatibility tracking</span></div></li>
+            <li><i class="fas fa-check-circle"></i><div><strong>Route Optimization</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Nearest-neighbour heuristic with combined collection analysis to minimize travel</span></div></li>
+            <li><i class="fas fa-check-circle"></i><div><strong>Normal vs Optimized Comparison</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Quantitative comparison of distance, fuel, time, and cost with percentage savings</span></div></li>
+            <li><i class="fas fa-check-circle"></i><div><strong>Safety Compliance</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Chemical and hazardous waste enforced to specialized vehicles and facilities</span></div></li>
+            <li><i class="fas fa-check-circle"></i><div><strong>Analytics & Forecasting</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Waste composition charts, daily trends, zone analysis, and simple predictive forecasting</span></div></li>
+        </ul>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-code" style="color:var(--accent-blue);margin-right:8px;"></i>Technology Stack</h3>
+        </div>
+        <ul class="feature-list">
+            <li><i class="fab fa-python" style="color:#3776ab;"></i><div><strong>Python + Flask</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Backend server, routing logic, optimization algorithms</span></div></li>
+            <li><i class="fab fa-html5" style="color:#e34c26;"></i><div><strong>HTML5 + CSS3 + JavaScript</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Modern responsive dashboard UI with dark theme</span></div></li>
+            <li><i class="fas fa-map-marked-alt" style="color:var(--accent-green);"></i><div><strong>Leaflet + OpenStreetMap</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Interactive GIS mapping with heatmap support</span></div></li>
+            <li><i class="fas fa-chart-bar" style="color:var(--accent-purple);"></i><div><strong>Chart.js</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Donut, bar, and line charts for analytics</span></div></li>
+            <li><i class="fas fa-database" style="color:var(--accent-orange);"></i><div><strong>JSON Data Storage</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Lightweight local data — no database required</span></div></li>
+            <li><i class="fas fa-calculator" style="color:var(--accent-teal);"></i><div><strong>Haversine + Nearest Neighbour</strong><br><span style="color:var(--text-secondary);font-size:.82rem;">Distance calculation and TSP heuristic for route optimization</span></div></li>
+        </ul>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3><i class="fas fa-play-circle" style="color:var(--accent-green);margin-right:8px;"></i>Demonstration Flow</h3>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+        <span class="waste-tag" style="background:rgba(0,184,148,0.12);color:var(--accent-green);padding:8px 16px;font-size:.85rem;">1. Login</span>
+        <i class="fas fa-arrow-right" style="color:var(--text-muted);"></i>
+        <span class="waste-tag" style="background:rgba(9,132,227,0.12);color:var(--accent-blue);padding:8px 16px;font-size:.85rem;">2. Dashboard</span>
+        <i class="fas fa-arrow-right" style="color:var(--text-muted);"></i>
+        <span class="waste-tag" style="background:rgba(0,206,201,0.12);color:var(--accent-teal);padding:8px 16px;font-size:.85rem;">3. GIS Map</span>
+        <i class="fas fa-arrow-right" style="color:var(--text-muted);"></i>
+        <span class="waste-tag" style="background:rgba(108,92,231,0.12);color:var(--accent-purple);padding:8px 16px;font-size:.85rem;">4. Waste Sources</span>
+        <i class="fas fa-arrow-right" style="color:var(--text-muted);"></i>
+        <span class="waste-tag" style="background:rgba(253,203,110,0.12);color:var(--accent-yellow);padding:8px 16px;font-size:.85rem;">5. Generate Plan</span>
+        <i class="fas fa-arrow-right" style="color:var(--text-muted);"></i>
+        <span class="waste-tag" style="background:rgba(0,184,148,0.12);color:var(--accent-green);padding:8px 16px;font-size:.85rem;">6. Optimize Routes</span>
+        <i class="fas fa-arrow-right" style="color:var(--text-muted);"></i>
+        <span class="waste-tag" style="background:rgba(225,112,85,0.12);color:var(--accent-orange);padding:8px 16px;font-size:.85rem;">7. Compare Results</span>
+        <i class="fas fa-arrow-right" style="color:var(--text-muted);"></i>
+        <span class="waste-tag" style="background:rgba(253,121,168,0.12);color:var(--accent-pink);padding:8px 16px;font-size:.85rem;">8. Analytics</span>
+    </div>
+</div>
+{% endblock %}

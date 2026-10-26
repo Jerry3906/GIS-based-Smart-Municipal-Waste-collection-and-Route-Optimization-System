@@ -1,0 +1,452 @@
+[
+  {
+    "id": "WS001",
+    "name": "Rajesh Nagar House 12",
+    "type": "House",
+    "area": "Rajesh Nagar, Zone A",
+    "zone": "A",
+    "lat": 12.8973,
+    "lng": 77.5463,
+    "waste": {
+      "recyclable": 3.0,
+      "organic": 4.5,
+      "general": 1.5,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS002",
+    "name": "Green Valley Apartments",
+    "type": "Apartment",
+    "area": "MG Road, Zone A",
+    "zone": "A",
+    "lat": 12.896,
+    "lng": 77.5639,
+    "waste": {
+      "recyclable": 18.0,
+      "organic": 22.0,
+      "general": 12.0,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS003",
+    "name": "Sunflower Residency",
+    "type": "Apartment",
+    "area": "Park Avenue, Zone A",
+    "zone": "A",
+    "lat": 12.8976,
+    "lng": 77.5827,
+    "waste": {
+      "recyclable": 14.0,
+      "organic": 19.0,
+      "general": 8.5,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS004",
+    "name": "Kumar Medical Store",
+    "type": "Shop",
+    "area": "Main Road, Zone A",
+    "zone": "A",
+    "lat": 12.8923,
+    "lng": 77.595,
+    "waste": {
+      "recyclable": 5.0,
+      "organic": 1.0,
+      "general": 3.5,
+      "chemical": 2.5,
+      "hazardous": 0.8
+    },
+    "last_collection": "2026-10-05",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS005",
+    "name": "Lakshmi Nagar House 7",
+    "type": "House",
+    "area": "Lakshmi Nagar, Zone A",
+    "zone": "A",
+    "lat": 12.8943,
+    "lng": 77.6122,
+    "waste": {
+      "recyclable": 2.5,
+      "organic": 3.5,
+      "general": 1.0,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS006",
+    "name": "Maple Heights Apartment",
+    "type": "Apartment",
+    "area": "Gandhi Road, Zone A",
+    "zone": "A",
+    "lat": 12.9128,
+    "lng": 77.5424,
+    "waste": {
+      "recyclable": 16.0,
+      "organic": 20.0,
+      "general": 10.0,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS007",
+    "name": "City Centre Mall",
+    "type": "Shop",
+    "area": "Commercial Street, Zone B",
+    "zone": "B",
+    "lat": 12.9121,
+    "lng": 77.5617,
+    "waste": {
+      "recyclable": 28.0,
+      "organic": 8.0,
+      "general": 18.0,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS008",
+    "name": "Spice Garden Restaurant",
+    "type": "Restaurant",
+    "area": "Food Street, Zone B",
+    "zone": "B",
+    "lat": 12.9079,
+    "lng": 77.5776,
+    "waste": {
+      "recyclable": 6.0,
+      "organic": 35.0,
+      "general": 9.0,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS009",
+    "name": "TechPark Business Centre",
+    "type": "Office",
+    "area": "IT Corridor, Zone B",
+    "zone": "B",
+    "lat": 12.9072,
+    "lng": 77.5997,
+    "waste": {
+      "recyclable": 22.0,
+      "organic": 10.0,
+      "general": 14.0,
+      "chemical": 1.5,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS010",
+    "name": "FreshMart Supermarket",
+    "type": "Shop",
+    "area": "Market Road, Zone B",
+    "zone": "B",
+    "lat": 12.9111,
+    "lng": 77.6128,
+    "waste": {
+      "recyclable": 20.0,
+      "organic": 18.0,
+      "general": 12.0,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS011",
+    "name": "Cafe Sunrise",
+    "type": "Restaurant",
+    "area": "Lake Road, Zone B",
+    "zone": "B",
+    "lat": 12.9268,
+    "lng": 77.5474,
+    "waste": {
+      "recyclable": 4.0,
+      "organic": 22.0,
+      "general": 5.5,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS012",
+    "name": "Downtown Residency",
+    "type": "Apartment",
+    "area": "Downtown, Zone B",
+    "zone": "B",
+    "lat": 12.9255,
+    "lng": 77.5597,
+    "waste": {
+      "recyclable": 12.0,
+      "organic": 15.0,
+      "general": 7.5,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS013",
+    "name": "Heritage Hospital",
+    "type": "Hospital",
+    "area": "Hospital Road, Zone B",
+    "zone": "B",
+    "lat": 12.9221,
+    "lng": 77.5801,
+    "waste": {
+      "recyclable": 10.0,
+      "organic": 8.0,
+      "general": 6.0,
+      "chemical": 5.0,
+      "hazardous": 3.5
+    },
+    "last_collection": "2026-10-05",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS014",
+    "name": "AutoParts Manufacturing",
+    "type": "Factory",
+    "area": "Industrial Area, Zone C",
+    "zone": "C",
+    "lat": 12.9224,
+    "lng": 77.5974,
+    "waste": {
+      "recyclable": 95.0,
+      "organic": 18.0,
+      "general": 75.0,
+      "chemical": 38.0,
+      "hazardous": 8.0
+    },
+    "last_collection": "2026-10-05",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS015",
+    "name": "Textile Mill Industries",
+    "type": "Factory",
+    "area": "Industrial Area, Zone C",
+    "zone": "C",
+    "lat": 12.9273,
+    "lng": 77.6125,
+    "waste": {
+      "recyclable": 80.0,
+      "organic": 12.0,
+      "general": 55.0,
+      "chemical": 22.0,
+      "hazardous": 4.0
+    },
+    "last_collection": "2026-10-05",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS016",
+    "name": "ChemSynth Industries",
+    "type": "Factory",
+    "area": "Industrial Area, Zone C",
+    "zone": "C",
+    "lat": 12.942,
+    "lng": 77.5426,
+    "waste": {
+      "recyclable": 25.0,
+      "organic": 5.0,
+      "general": 35.0,
+      "chemical": 55.0,
+      "hazardous": 18.0
+    },
+    "last_collection": "2026-10-04",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS017",
+    "name": "South Colony House 3",
+    "type": "House",
+    "area": "South Colony, Zone C",
+    "zone": "C",
+    "lat": 12.9412,
+    "lng": 77.5611,
+    "waste": {
+      "recyclable": 2.0,
+      "organic": 3.0,
+      "general": 1.5,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS018",
+    "name": "Industrial Canteen",
+    "type": "Restaurant",
+    "area": "Industrial Area, Zone C",
+    "zone": "C",
+    "lat": 12.9388,
+    "lng": 77.5798,
+    "waste": {
+      "recyclable": 5.0,
+      "organic": 28.0,
+      "general": 7.0,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS019",
+    "name": "PharmaCure Solutions",
+    "type": "Factory",
+    "area": "Industrial Area, Zone C",
+    "zone": "C",
+    "lat": 12.9371,
+    "lng": 77.5952,
+    "waste": {
+      "recyclable": 12.0,
+      "organic": 3.0,
+      "general": 18.0,
+      "chemical": 32.0,
+      "hazardous": 14.0
+    },
+    "last_collection": "2026-10-04",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS020",
+    "name": "West End Apartments",
+    "type": "Apartment",
+    "area": "West End, Zone D",
+    "zone": "D",
+    "lat": 12.9375,
+    "lng": 77.6126,
+    "waste": {
+      "recyclable": 15.0,
+      "organic": 18.0,
+      "general": 9.0,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS021",
+    "name": "Royal Bakery & Sweets",
+    "type": "Shop",
+    "area": "Temple Road, Zone D",
+    "zone": "D",
+    "lat": 12.9547,
+    "lng": 77.5437,
+    "waste": {
+      "recyclable": 7.0,
+      "organic": 15.0,
+      "general": 4.0,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS022",
+    "name": "Government Higher Secondary School",
+    "type": "Office",
+    "area": "School Lane, Zone D",
+    "zone": "D",
+    "lat": 12.9532,
+    "lng": 77.5598,
+    "waste": {
+      "recyclable": 8.0,
+      "organic": 10.0,
+      "general": 5.0,
+      "chemical": 0.5,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS023",
+    "name": "Shanti Nagar House 9",
+    "type": "House",
+    "area": "Shanti Nagar, Zone D",
+    "zone": "D",
+    "lat": 12.954,
+    "lng": 77.579,
+    "waste": {
+      "recyclable": 2.5,
+      "organic": 3.5,
+      "general": 1.5,
+      "chemical": 0,
+      "hazardous": 0
+    },
+    "last_collection": "2026-10-06",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS024",
+    "name": "Electronics Repair Hub",
+    "type": "Shop",
+    "area": "Market Lane, Zone D",
+    "zone": "D",
+    "lat": 12.9528,
+    "lng": 77.5952,
+    "waste": {
+      "recyclable": 4.5,
+      "organic": 0.5,
+      "general": 3.0,
+      "chemical": 1.5,
+      "hazardous": 0.5
+    },
+    "last_collection": "2026-10-05",
+    "collection_frequency": "Daily"
+  },
+  {
+    "id": "WS025",
+    "name": "Paint & Hardware Depot",
+    "type": "Shop",
+    "area": "Industrial Road, Zone D",
+    "zone": "D",
+    "lat": 12.9525,
+    "lng": 77.6133,
+    "waste": {
+      "recyclable": 6.0,
+      "organic": 1.0,
+      "general": 8.0,
+      "chemical": 4.0,
+      "hazardous": 1.5
+    },
+    "last_collection": "2026-10-05",
+    "collection_frequency": "Daily"
+  }
+]

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Waste Sources{% endblock %}
+{% block page_title %}Waste Sources{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <div style="display:flex;align-items:center;">
+            <h3><i class="fas fa-map-marker-alt" style="color:var(--accent-blue);margin-right:8px;"></i>All Waste-Generating Locations</h3>
+            <span class="card-badge" style="background:rgba(9,132,227,0.12);color:var(--accent-blue);margin-left:12px;">25 Sources</span>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="showAddEntryModal()"><i class="fas fa-plus"></i> Add New Source</button>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-secondary);margin-bottom:16px;">Click any row to view complete segregated waste details for that location.</p>
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Area / Zone</th>
+                    <th>Total Waste</th>
+                    <th>Waste Distribution</th>
+                    <th>Last Collection</th>
+                </tr>
+            </thead>
+            <tbody id="wasteSourcesBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Legend -->
+<div class="card mt-20">
+    <div class="card-header"><h3><i class="fas fa-palette" style="color:var(--accent-purple);margin-right:8px;"></i>Waste Category Legend</h3></div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <span class="waste-tag recyclable"><i class="fas fa-recycle"></i> Recyclable</span>
+        <span class="waste-tag organic"><i class="fas fa-leaf"></i> Organic / Biodegradable</span>
+        <span class="waste-tag general"><i class="fas fa-trash"></i> General / Non-Recyclable</span>
+        <span class="waste-tag chemical"><i class="fas fa-flask"></i> Chemical</span>
+        <span class="waste-tag hazardous"><i class="fas fa-biohazard"></i> Hazardous</span>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>document.addEventListener('DOMContentLoaded', initWasteSources);</script>
+{% endblock %}

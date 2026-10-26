@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Truck Route - SmartWaste{% endblock %}
+
+{% block content %}
+<div class="card mb-20" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px);">
+    <div class="card-header">
+        <div>
+            <h3><i class="fas fa-route" style="color:var(--accent-blue);margin-right:8px;"></i> Route Assignment: <span id="truckNameLabel">{{ truck_id }}</span></h3>
+            <p style="font-size:.85rem;color:var(--text-secondary);margin-top:6px;">Optimized nearest-neighbour path for today's collection cycle.</p>
+        </div>
+        <button class="btn btn-secondary btn-sm" onclick="window.history.back()"><i class="fas fa-arrow-left"></i> Back to Fleet</button>
+    </div>
+</div>
+
+<div class="grid-2">
+    <div class="card" style="padding:0; overflow:hidden; height:500px; position:relative;">
+        <div id="routeMap" style="position:absolute; top:0; left:0; right:0; bottom:0;"></div>
+    </div>
+    
+    <div class="card" style="height:500px; overflow-y:auto;">
+        <h4 style="margin-bottom:16px;">Route Stops & Metrics</h4>
+        <div id="routeMetrics" class="mb-20" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <!-- filled by js -->
+            <div style="padding:10px;text-align:center;"><div class="spinner"></div></div>
+        </div>
+        
+        <h5 style="margin-bottom:12px; font-size:.85rem; color:var(--text-secondary); text-transform:uppercase;">Turn-by-Turn Path</h5>
+        <div id="routeStopsList" style="display:flex; flex-direction:column; gap:12px; position:relative; padding-left:12px; border-left:2px solid var(--border-light);">
+            <!-- filled by js -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    const truckId = "{{ truck_id }}";
+    let map = null;
+    let markers = L.layerGroup();
+    let polylines = L.layerGroup();
+
+    async function loadTruckRoute() {
+        try {
+            const data = await apiFetch('/api/generate-optimized-plan', { method: 'POST' });
+            
+            if (!data) throw new Error("Failed to fetch plan data");
+            
+            const route = data.plan.routes.find(r => r.truck_id === truckId);
+            
+            if (!route) {
+                document.getElementById('routeMetrics').innerHTML = `<p style="color:var(--accent-red); grid-column:span 2;">No route assigned for this truck today.</p>`;
+                document.getElementById('routeStopsList').innerHTML = ``;
+                return;
+            }
+            
+            document.getElementById('truckNameLabel').textContent = route.truck_name + ' (' + route.truck_id + ')';
+            
+            // Map
+            if (!map) {
+                map = createMap('routeMap', [12.928, 77.585], 13);
+                markers.addTo(map);
+                polylines.addTo(map);
+            }
+            
+            // Draw Route
+            markers.clearLayers();
+            polylines.clearLayers();
+            
+            const latlngs = route.stops.map(s => [s.lat, s.lng]);
+            const pathLine = L.polyline(latlngs, {color: route.color, weight: 4, dashArray: '8, 8', lineCap: 'round'}).addTo(polylines);
+            
+            let htmlStops = '';
+            
+            route.stops.forEach((stop, index) => {
+                let iconClass = 'fa-map-marker-alt';
+                let iconColor = route.color;
+                if (stop.type === 'depot') { iconClass = 'fa-warehouse'; iconColor = '#2d3436'; }
+                if (stop.type === 'facility') { iconClass = 'fa-industry'; iconColor = '#0984e3'; }
+                
+                const mIcon = L.divIcon({
+                    className: 'custom-div-icon',
+                    html: `<div class="marker-pin" style="background:${iconColor};"><i class="fas ${iconClass}"></i></div>`,
+                    iconSize: [30, 42],
+                    iconAnchor: [15, 42]
+                });
+                
+                const m = L.marker([stop.lat, stop.lng], {icon: mIcon}).addTo(markers);
+                m.bindPopup(`<b>${stop.name}</b><br>${stop.action || 'Collection Stop'}`);
+                
+                htmlStops += `
+                    <div style="position:relative; padding:12px; background:var(--bg-secondary); border-radius:8px; border:1px solid var(--border-light);">
+                        <div style="position:absolute; left:-19px; top:16px; width:12px; height:12px; border-radius:50%; background:${iconColor}; border:2px solid #fff;"></div>
+                        <strong style="display:block; font-size:.9rem; color:var(--text-primary); margin-bottom:4px;">${index+1}. ${stop.name}</strong>
+                        <div style="font-size:.75rem; color:var(--text-secondary);">
+                            ${stop.action ? stop.action : `Collect ${stop.waste_collected_kg}kg (${stop.waste_type})`}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            map.fitBounds(pathLine.getBounds(), {padding: [30, 30]});
+            setTimeout(() => map.invalidateSize(), 300);
+            
+            // Metrics
+            document.getElementById('routeMetrics').innerHTML = `
+                <div class="info-item"><div class="info-label">Distance</div><div class="info-value">${formatNum(route.distance_km)} km</div></div>
+                <div class="info-item"><div class="info-label">Est. Time</div><div class="info-value">${formatTime(route.total_time_min)}</div></div>
+                <div class="info-item"><div class="info-label">Total Load</div><div class="info-value">${formatNum(route.total_load_kg)} kg</div></div>
+                <div class="info-item"><div class="info-label">Utilization</div><div class="info-value">${formatNum(route.utilization_pct)}%</div></div>
+            `;
+            
+            document.getElementById('routeStopsList').innerHTML = htmlStops;
+            
+        } catch(e) {
+            console.error(e);
+            document.getElementById('routeMetrics').innerHTML = `<p style="color:var(--accent-red); grid-column:span 2;">Error loading route data.</p>`;
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', loadTruckRoute);
+</script>
+{% endblock %}

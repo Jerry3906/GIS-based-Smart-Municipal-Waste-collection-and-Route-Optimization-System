@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Municipal Waste Collection & Route Optimization System — Academic Demonstration">
+    <title>{% block title %}Dashboard{% endblock %} — Smart Waste Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="sidebar-brand-icon"><i class="fas fa-recycle"></i></div>
+            <div class="sidebar-brand-text">
+                <span class="brand-title">SmartWaste</span>
+                <span class="brand-sub">Municipal System</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="{{ url_for('dashboard') }}" class="nav-item {% if page == 'dashboard' %}active{% endif %}">
+                <span class="sticker"><i class="fas fa-tachometer-alt"></i></span><span>Dashboard</span>
+            </a>
+            <a href="{{ url_for('waste_sources_page') }}" class="nav-item {% if page == 'waste_sources' %}active{% endif %}">
+                <span class="sticker"><i class="fas fa-map-marker-alt"></i></span><span>Waste Sources</span>
+            </a>
+            <a href="{{ url_for('gis_map_page') }}" class="nav-item {% if page == 'gis_map' %}active{% endif %}">
+                <span class="sticker"><i class="fas fa-globe-asia"></i></span><span>GIS Map</span>
+            </a>
+            <a href="{{ url_for('collection_planning_page') }}" class="nav-item {% if page == 'collection_planning' %}active{% endif %}">
+                <span class="sticker"><i class="fas fa-route"></i></span><span>Collection Planning</span>
+            </a>
+            <a href="{{ url_for('trucks_page') }}" class="nav-item {% if page == 'trucks' %}active{% endif %}">
+                <span class="sticker"><i class="fas fa-truck"></i></span><span>Trucks / Vehicles</span>
+            </a>
+            <a href="{{ url_for('facilities_page') }}" class="nav-item {% if page == 'facilities' %}active{% endif %}">
+                <span class="sticker"><i class="fas fa-industry"></i></span><span>Facilities</span>
+            </a>
+            <div class="nav-divider"></div>
+            <a href="{{ url_for('analytics_page') }}" class="nav-item {% if page == 'analytics' %}active{% endif %}">
+                <span class="sticker"><i class="fas fa-chart-pie"></i></span><span>Analytics</span>
+            </a>
+            <a href="{{ url_for('collection_history_page') }}" class="nav-item {% if page == 'collection_history' %}active{% endif %}">
+                <span class="sticker"><i class="fas fa-history"></i></span><span>Collection History</span>
+            </a>
+            <a href="{{ url_for('zones_page') }}" class="nav-item {% if page == 'zones' %}active{% endif %}">
+                <span class="sticker"><i class="fas fa-th-large"></i></span><span>Collection Zones</span>
+            </a>
+            <div class="nav-divider"></div>
+            <a href="{{ url_for('about_page') }}" class="nav-item {% if page == 'about' %}active{% endif %}">
+                <span class="sticker"><i class="fas fa-info-circle"></i></span><span>About</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar"><i class="fas fa-user-shield"></i></div>
+                <div class="user-detail">
+                    <span class="user-name">Manager</span>
+                    <span class="user-role">Operations Manager</span>
+                </div>
+            </div>
+            <a href="{{ url_for('logout') }}" class="logout-btn" title="Logout">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <div class="topbar-left">
+                <h2 class="page-title">{% block page_title %}Dashboard{% endblock %}</h2>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-badge" id="notificationBadge" style="display:none;">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge-count">0</span>
+                </div>
+                <div class="topbar-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">System Online</span>
+                </div>
+            </div>
+        </header>
+        <div class="content-area" id="contentArea">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <!-- Notification Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-dialog" id="modalDialog">
+            <div class="modal-header">
+                <h3 id="modalTitle">Details</h3>
+                <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

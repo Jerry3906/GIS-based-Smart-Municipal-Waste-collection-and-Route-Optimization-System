@@ -1,0 +1,72 @@
+{
+  "depot": {
+    "id": "D01",
+    "name": "Central Municipal Depot",
+    "type": "Depot",
+    "lat": 12.9280,
+    "lng": 77.5850,
+    "description": "Main truck depot and operations center"
+  },
+  "facilities": [
+    {
+      "id": "F01",
+      "name": "Green Recycling Center",
+      "type": "Recycling",
+      "accepted_waste": "recyclable",
+      "lat": 12.9400,
+      "lng": 77.5980,
+      "capacity_kg_per_day": 5000,
+      "current_load_kg": 0,
+      "operating_hours": "06:00 - 20:00",
+      "description": "Processes recyclable materials including plastics, metals, paper, and glass"
+    },
+    {
+      "id": "F02",
+      "name": "BioGreen Composting Facility",
+      "type": "Composting",
+      "accepted_waste": "organic",
+      "lat": 12.9100,
+      "lng": 77.5950,
+      "capacity_kg_per_day": 4000,
+      "current_load_kg": 0,
+      "operating_hours": "06:00 - 18:00",
+      "description": "Converts organic and biodegradable waste into compost and biogas"
+    },
+    {
+      "id": "F03",
+      "name": "Municipal Waste Processing & Landfill",
+      "type": "Landfill",
+      "accepted_waste": "general",
+      "lat": 12.9050,
+      "lng": 77.5720,
+      "capacity_kg_per_day": 8000,
+      "current_load_kg": 0,
+      "operating_hours": "06:00 - 22:00",
+      "description": "Engineered sanitary landfill with waste processing for non-recyclable general waste"
+    },
+    {
+      "id": "F04",
+      "name": "SafeChem Treatment Plant",
+      "type": "Chemical Treatment",
+      "accepted_waste": "chemical",
+      "lat": 12.9420,
+      "lng": 77.5700,
+      "capacity_kg_per_day": 1500,
+      "current_load_kg": 0,
+      "operating_hours": "08:00 - 18:00",
+      "description": "Specialized facility for neutralization, treatment, and safe disposal of chemical waste"
+    },
+    {
+      "id": "F05",
+      "name": "SecureWaste Hazardous Disposal",
+      "type": "Hazardous Waste",
+      "accepted_waste": "hazardous",
+      "lat": 12.9450,
+      "lng": 77.5670,
+      "capacity_kg_per_day": 800,
+      "current_load_kg": 0,
+      "operating_hours": "08:00 - 16:00",
+      "description": "High-security facility for incineration and containment of hazardous waste materials"
+    }
+  ]
+}

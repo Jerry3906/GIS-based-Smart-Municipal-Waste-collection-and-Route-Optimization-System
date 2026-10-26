@@ -1,0 +1,34 @@
+[
+  {
+    "id": "A",
+    "name": "Zone A — North Residential",
+    "description": "Residential area with houses and apartment complexes",
+    "color": "#00b894",
+    "sources": ["WS001", "WS002", "WS003", "WS004", "WS005", "WS006"],
+    "bounds": [[12.9315, 77.5815], [12.9395, 77.5905]]
+  },
+  {
+    "id": "B",
+    "name": "Zone B — East Commercial",
+    "description": "Commercial and business district with malls, restaurants, offices and hospital",
+    "color": "#0984e3",
+    "sources": ["WS007", "WS008", "WS009", "WS010", "WS011", "WS012", "WS013"],
+    "bounds": [[12.9215, 77.5895], [12.9295, 77.5975]]
+  },
+  {
+    "id": "C",
+    "name": "Zone C — South Industrial",
+    "description": "Industrial area with factories, manufacturing units, and supporting services",
+    "color": "#e17055",
+    "sources": ["WS014", "WS015", "WS016", "WS017", "WS018", "WS019"],
+    "bounds": [[12.9110, 77.5780], [12.9185, 77.5880]]
+  },
+  {
+    "id": "D",
+    "name": "Zone D — West Mixed",
+    "description": "Mixed residential and small commercial area with shops and public institutions",
+    "color": "#a29bfe",
+    "sources": ["WS020", "WS021", "WS022", "WS023", "WS024", "WS025"],
+    "bounds": [[12.9225, 77.5745], [12.9310, 77.5810]]
+  }
+]

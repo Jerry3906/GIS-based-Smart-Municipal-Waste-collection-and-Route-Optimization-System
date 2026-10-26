@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+
+{% block content %}
+<!-- KPI Cards Row 1 -->
+<div class="kpi-grid">
+    <div class="kpi-card green">
+        <div class="kpi-top">
+            <div class="kpi-label">Total Waste Today</div>
+            <div class="kpi-icon"><i class="fas fa-dumpster"></i></div>
+        </div>
+        <div class="kpi-value" id="kpiTotalWaste">
+            <div class="spinner" style="width:20px;height:20px;margin:0;border-width:2px;"></div>
+        </div>
+        <div class="kpi-sub"><span style="color:var(--accent-green);font-weight:700;">Combined</span> categories</div>
+    </div>
+    <div class="kpi-card blue">
+        <div class="kpi-top">
+            <div class="kpi-label">Collection Locations</div>
+            <div class="kpi-icon"><i class="fas fa-map-marker-alt"></i></div>
+        </div>
+        <div class="kpi-value" id="kpiSources">—</div>
+        <div class="kpi-sub"><span style="color:var(--accent-blue);font-weight:700;">Active</span> sources</div>
+    </div>
+    <div class="kpi-card purple">
+        <div class="kpi-top">
+            <div class="kpi-label">Active Trucks</div>
+            <div class="kpi-icon"><i class="fas fa-truck"></i></div>
+        </div>
+        <div class="kpi-value" id="kpiTrucks">—</div>
+        <div class="kpi-sub"><span style="color:var(--accent-purple);font-weight:700;">Ready</span> for dispatch</div>
+    </div>
+    <div class="kpi-card teal">
+        <div class="kpi-top">
+            <div class="kpi-label">Facilities</div>
+            <div class="kpi-icon"><i class="fas fa-industry"></i></div>
+        </div>
+        <div class="kpi-value" id="kpiFacilities">—</div>
+        <div class="kpi-sub"><span style="color:var(--accent-teal);font-weight:700;">Processing</span> facilities</div>
+    </div>
+</div>
+
+<!-- KPI Cards Row 2 — Optimization Metrics -->
+<div class="kpi-grid">
+    <div class="kpi-card orange">
+        <div class="kpi-top">
+            <div class="kpi-label">Normal Distance</div>
+            <div class="kpi-icon"><i class="fas fa-road"></i></div>
+        </div>
+        <div class="kpi-value" id="kpiNormalDist">—</div>
+        <div class="kpi-sub"><span style="color:var(--accent-amber);font-weight:700;">Traditional</span> routing</div>
+    </div>
+    <div class="kpi-card green">
+        <div class="kpi-top">
+            <div class="kpi-label">Optimized Distance</div>
+            <div class="kpi-icon"><i class="fas fa-route"></i></div>
+        </div>
+        <div class="kpi-value" id="kpiOptDist">—</div>
+        <div class="kpi-sub"><span style="color:var(--accent-green);font-weight:700;">After</span> optimization</div>
+    </div>
+    <div class="kpi-card teal">
+        <div class="kpi-top">
+            <div class="kpi-label">Distance Saved</div>
+            <div class="kpi-icon"><i class="fas fa-arrows-alt-h"></i></div>
+        </div>
+        <div class="kpi-value" id="kpiDistSavedVal">—</div>
+        <div class="kpi-sub"><span id="kpiDistSavedPct" style="color:var(--accent-teal);font-weight:700;">—</span> travel reduced</div>
+    </div>
+    <div class="kpi-card pink">
+        <div class="kpi-top">
+            <div class="kpi-label">Fuel Saved</div>
+            <div class="kpi-icon"><i class="fas fa-gas-pump"></i></div>
+        </div>
+        <div class="kpi-value" id="kpiFuelSavedVal">—</div>
+        <div class="kpi-sub"><span id="kpiFuelSavedPct" style="color:var(--accent-red);font-weight:700;">—</span> consumption dropped</div>
+    </div>
+</div>
+
+<div class="kpi-grid" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="kpi-card yellow">
+        <div class="kpi-top">
+            <div class="kpi-label">Time Saved</div>
+            <div class="kpi-icon"><i class="fas fa-clock"></i></div>
+        </div>
+        <div class="kpi-value" id="kpiTimeSavedVal">—</div>
+        <div class="kpi-sub"><span id="kpiTimeSavedPct" style="color:var(--accent-amber);font-weight:700;">—</span> faster collection</div>
+    </div>
+    <div class="kpi-card green">
+        <div class="kpi-top">
+            <div class="kpi-label">Cost Saved</div>
+            <div class="kpi-icon"><i class="fas fa-rupee-sign"></i></div>
+        </div>
+        <div class="kpi-value" id="kpiCostSavedVal">—</div>
+        <div class="kpi-sub"><span id="kpiCostSavedPct" style="color:var(--accent-green);font-weight:700;">—</span> expenses saved</div>
+    </div>
+</div>
+
+<!-- Main Dashboard Area -->
+<div class="grid-dashboard mb-20">
+    <!-- Map -->
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-globe-asia" style="color:var(--accent-teal);margin-right:8px;"></i>Municipal Overview Map</h3>
+            <span class="card-badge" style="background:rgba(0,206,201,0.12);color:var(--accent-teal);">Live</span>
+        </div>
+        <div class="map-container" style="height:420px;">
+            <div id="dashboardMap" style="width:100%;height:100%;"></div>
+        </div>
+    </div>
+    <!-- Waste Composition -->
+    <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-chart-pie" style="color:var(--accent-purple);margin-right:8px;"></i>Waste Composition</h3>
+            <span class="card-badge" style="background:rgba(108,92,231,0.12);color:var(--accent-purple);">Today</span>
+        </div>
+        <div class="chart-container" style="height:370px;">
+            <canvas id="wasteDonutChart"></canvas>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>document.addEventListener('DOMContentLoaded', initDashboard);</script>
+{% endblock %}

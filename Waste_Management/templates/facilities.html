@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Facilities{% endblock %}
+{% block page_title %}Processing Facilities{% endblock %}
+
+{% block content %}
+<div class="card mb-20">
+    <div class="card-header">
+        <h3><i class="fas fa-industry" style="color:var(--accent-teal);margin-right:8px;"></i>Waste Processing & Disposal Facilities</h3>
+        <span class="card-badge" style="background:rgba(0,206,201,0.12);color:var(--accent-teal);">6 Locations</span>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-secondary);margin-bottom:6px;">
+        Each waste category has a designated processing facility. Routes are planned to deliver waste to the appropriate facility based on its type.
+    </p>
+</div>
+
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(310px, 1fr)); gap:18px;" id="facilityGrid"></div>
+
+<!-- Waste-to-Facility Mapping -->
+<div class="card mt-20">
+    <div class="card-header">
+        <h3><i class="fas fa-project-diagram" style="color:var(--accent-blue);margin-right:8px;"></i>Waste → Facility Mapping</h3>
+    </div>
+    <div class="table-container">
+        <table class="data-table">
+            <thead>
+                <tr><th>Waste Category</th><th>Destination Facility</th><th>Facility Type</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="waste-tag recyclable"><i class="fas fa-recycle"></i> Recyclable</span></td><td>Green Recycling Center</td><td>Recycling</td></tr>
+                <tr><td><span class="waste-tag organic"><i class="fas fa-leaf"></i> Organic</span></td><td>BioGreen Composting Facility</td><td>Composting</td></tr>
+                <tr><td><span class="waste-tag general"><i class="fas fa-trash"></i> General</span></td><td>Municipal Waste Processing & Landfill</td><td>Landfill</td></tr>
+                <tr><td><span class="waste-tag chemical"><i class="fas fa-flask"></i> Chemical</span></td><td>SafeChem Treatment Plant</td><td>Chemical Treatment</td></tr>
+                <tr><td><span class="waste-tag hazardous"><i class="fas fa-biohazard"></i> Hazardous</span></td><td>SecureWaste Hazardous Disposal</td><td>Hazardous Waste</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>document.addEventListener('DOMContentLoaded', initFacilities);</script>
+{% endblock %}

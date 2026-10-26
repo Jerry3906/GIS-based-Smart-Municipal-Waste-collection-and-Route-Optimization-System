@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}GIS Map{% endblock %}
+{% block page_title %}GIS Map — Municipal Overview{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3><i class="fas fa-globe-asia" style="color:var(--accent-teal);margin-right:8px;"></i>Interactive GIS Map</h3>
+        <span class="card-badge" style="background:rgba(0,206,201,0.12);color:var(--accent-teal);">OpenStreetMap + Leaflet</span>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-secondary);margin-bottom:14px;">
+        Click any marker to view details. Use the layer control (top-right) to toggle waste sources, facilities, depot, heatmap, and collection zones.
+    </p>
+    <div class="map-container" style="height:calc(100vh - 180px); min-height:650px; position:relative;">
+        <div id="gisMapFull" style="width:100%;height:100%;"></div>
+        <div class="map-legend">
+            <div class="legend-title">Map Legend</div>
+            <div class="legend-item"><div class="legend-color" style="background:#00b894;border-radius:50%;"></div>House</div>
+            <div class="legend-item"><div class="legend-color" style="background:#0984e3;border-radius:50%;"></div>Apartment</div>
+            <div class="legend-item"><div class="legend-color" style="background:#fdcb6e;border-radius:50%;"></div>Shop</div>
+            <div class="legend-item"><div class="legend-color" style="background:#e17055;border-radius:50%;"></div>Restaurant</div>
+            <div class="legend-item"><div class="legend-color" style="background:#d63031;border-radius:50%;"></div>Factory</div>
+            <div class="legend-item"><div class="legend-color" style="background:#6c5ce7;border-radius:50%;"></div>Office</div>
+            <div class="legend-item"><div class="legend-color" style="background:#fd79a8;border-radius:50%;"></div>Hospital</div>
+            <div style="margin:8px 0;border-top:1px solid var(--border);"></div>
+            <div class="legend-item"><div class="legend-color" style="background:#00b894;border-radius:4px;"></div>Recycling</div>
+            <div class="legend-item"><div class="legend-color" style="background:#fdcb6e;border-radius:4px;"></div>Composting</div>
+            <div class="legend-item"><div class="legend-color" style="background:#74b9ff;border-radius:4px;"></div>Landfill</div>
+            <div class="legend-item"><div class="legend-color" style="background:#e17055;border-radius:4px;"></div>Chemical Treatment</div>
+            <div class="legend-item"><div class="legend-color" style="background:#d63031;border-radius:4px;"></div>Hazardous Disposal</div>
+            <div class="legend-item"><div class="legend-color" style="background:#6c5ce7;border-radius:4px;"></div>Depot</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>document.addEventListener('DOMContentLoaded', initGISMap);</script>
+{% endblock %}
