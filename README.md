@@ -6,7 +6,7 @@ A web application for municipal waste management that uses GIS technology includ
 
 ## Live Demo
 
-- **Live Website:** `ADD_YOUR_RENDER_URL_HERE`
+- **Live Website:** [](https://jerry3906.github.io/GIS-based-Smart-Municipal-Waste-collection-and-Route-Optimization-System/)
 - **GitHub Repository:** `ADD_YOUR_GITHUB_REPOSITORY_URL_HERE`
 - **Project Report:** Add your report link here, if publicly accessible.
 
